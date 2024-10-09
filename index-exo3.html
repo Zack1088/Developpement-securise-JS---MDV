@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 3</title>
+    <script>
+        function exercice3() {
+            let nombre1 = prompt("Entrez le premier entier:");
+            let nombre2 = prompt("Entrez le deuxième entier:");
+            let nombre3 = prompt("Entrez le troisième entier:");
+            // Convertir les valeurs de chaîne en nombre entier
+            nombre1 = parseInt(nombre1);
+            nombre2 = parseInt(nombre2);
+            nombre3 = parseInt(nombre3);
+
+            if (isNaN(nombre1) || isNaN(nombre2) || isNaN(nombre3)) {
+                console.log("Veuillez entrer des nombres valides.");
+            } else {
+                let nombres = [nombre1, nombre2, nombre3];
+                nombres.sort(function(a, b) {
+                    return a - b;
+                });
+                console.log(`Les nombres triés sont : ${nombres.join(", ")}`);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="exercice3()">Exercice 3: Tri des nombres</button>
+</body>
+</html>
