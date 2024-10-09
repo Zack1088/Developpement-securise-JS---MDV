@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 2</title>
+    <script>
+        function exercice2() {
+            let nombre1 = prompt("Entrez le premier entier:");
+            let nombre2 = prompt("Entrez le deuxième entier:");
+            // Convertir les valeurs de chaîne en nombre entier
+            nombre1 = parseInt(nombre1);
+            nombre2 = parseInt(nombre2);
+
+            if (isNaN(nombre1) || isNaN(nombre2)) {
+                console.log("Veuillez entrer des nombres valides.");
+            } else {
+                let produit = nombre1 * nombre2;
+                if (produit > 0) {
+                    console.log("Le signe du produit est : +");
+                } else if (produit < 0) {
+                    console.log("Le signe du produit est : -");
+                } else {
+                    console.log("Le produit est zéro.");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="exercice2()">Exercice 2: Signe du produit</button>
+</body>
+</html>
