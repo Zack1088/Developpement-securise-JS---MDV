@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 1</title>
+    <script>
+        function exercice1() {
+            let nombre1 = prompt("Entrez le premier entier:");
+            let nombre2 = prompt("Entrez le deuxième entier:");
+            // Convertir les valeurs de chaîne en nombre entier
+            nombre1 = parseInt(nombre1);
+            nombre2 = parseInt(nombre2);
+            
+            if (isNaN(nombre1) || isNaN(nombre2)) {
+                console.log("Veuillez entrer des nombres valides.");
+            } else {
+                let max = (nombre1 > nombre2) ? nombre1 : nombre2;
+                console.log(`Le plus grand nombre est : ${max}`);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="exercice1()">Exercice 1: Plus grand nombre</button>
+</body>
+</html>
