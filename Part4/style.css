@@ -1,0 +1,54 @@
+/* Style global pour la page */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Conteneur des utilisateurs */
+#users-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1200px;
+}
+
+/* Style des cartes utilisateurs */
+.user {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    transition: transform 0.3s ease;
+}
+
+.user:hover {
+    transform: translateY(-10px);
+}
+
+.user h2 {
+    font-size: 1.5em;
+    color: #444;
+}
+
+.user p {
+    font-size: 1em;
+    color: #666;
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    margin: 20px 0;
+}
