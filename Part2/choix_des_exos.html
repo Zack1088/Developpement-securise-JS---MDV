@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choix des Exercices</title>
+    <script>
+        // Fonction pour lancer le programme avec le choix de l'utilisateur
+        function lancerExercice() {
+            let choix = prompt("Entrez le numéro de l'exercice que vous voulez exécuter (1, 2 ou 3):");
+
+            switch(choix) {
+                case '1':
+                    exercice1();
+                    break;
+                case '2':
+                    exercice2();
+                    break;
+                case '3':
+                    exercice3();
+                    break;
+                default:
+                    console.log("Choix invalide. Veuillez entrer 1, 2 ou 3.");
+                    break;
+            }
+        }
+
+        // Exercice 1 : Trouver le plus grand nombre
+        function exercice1() {
+            let nombre1 = prompt("Entrez le premier entier:");
+            let nombre2 = prompt("Entrez le deuxième entier:");
+            nombre1 = parseInt(nombre1);
+            nombre2 = parseInt(nombre2);
+
+            if (isNaN(nombre1) || isNaN(nombre2)) {
+                console.log("Veuillez entrer des nombres valides.");
+            } else {
+                let max = (nombre1 > nombre2) ? nombre1 : nombre2;
+                console.log(`Le plus grand nombre est : ${max}`);
+            }
+        }
+
+        // Exercice 2 : Afficher le signe du produit de deux entiers
+        function exercice2() {
+            let nombre1 = prompt("Entrez le premier entier:");
+            let nombre2 = prompt("Entrez le deuxième entier:");
+            nombre1 = parseInt(nombre1);
+            nombre2 = parseInt(nombre2);
+
+            if (isNaN(nombre1) || isNaN(nombre2)) {
+                console.log("Veuillez entrer des nombres valides.");
+            } else {
+                let produit = nombre1 * nombre2;
+                if (produit > 0) {
+                    console.log("Le signe du produit est : +");
+                } else if (produit < 0) {
+                    console.log("Le signe du produit est : -");
+                } else {
+                    console.log("Le produit est zéro.");
+                }
+            }
+        }
+
+        // Exercice 3 : Trier trois entiers et les afficher
+        function exercice3() {
+            let nombre1 = prompt("Entrez le premier entier:");
+            let nombre2 = prompt("Entrez le deuxième entier:");
+            let nombre3 = prompt("Entrez le troisième entier:");
+            nombre1 = parseInt(nombre1);
+            nombre2 = parseInt(nombre2);
+            nombre3 = parseInt(nombre3);
+
+            if (isNaN(nombre1) || isNaN(nombre2) || isNaN(nombre3)) {
+                console.log("Veuillez entrer des nombres valides.");
+            } else {
+                let nombres = [nombre1, nombre2, nombre3];
+                nombres.sort(function(a, b) {
+                    return a - b;
+                });
+                console.log(`Les nombres triés sont : ${nombres.join(", ")}`);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="lancerExercice()">Lancer un exercice</button>
+</body>
+</html>
