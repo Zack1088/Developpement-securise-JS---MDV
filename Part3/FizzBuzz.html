@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz</title>
+    <script>
+        // Fonction pour compter de 1 à 100 avec les règles FizzBuzz spéciales
+        function fizzBuzz() {
+            for (let i = 1; i <= 100; i++) {
+                let output = '';
+
+                // Remplacer les multiples de 15 par "FizzBuzz"
+                if (i % 15 === 0) {
+                    output = 'FizzBuzz';
+                }
+                // Remplacer les multiples de 3 par "Fizz"
+                else if (i % 3 === 0) {
+                    output = 'Fizz';
+                }
+                // Remplacer les multiples de 5 par "Buzz"
+                else if (i % 5 === 0) {
+                    output = 'Buzz';
+                }
+                // Remplacer les nombres finissant par 9 par leur version en texte
+                else if (i % 10 === 9) {
+                    output = convertirNombreEnTexte(i);
+                }
+                // Sinon afficher le nombre lui-même
+                else {
+                    output = i;
+                }
+
+                console.log(output);
+            }
+        }
+
+        // Fonction pour convertir un nombre en texte (0-99)
+        function convertirNombreEnTexte(nombre) {
+            const unites = ['zéro', 'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf'];
+            const dizaines = ['', '', 'vingt', 'trente', 'quarante', 'cinquante', 'soixante', 'soixante-dix', 'quatre-vingt', 'quatre-vingt-dix'];
+
+            if (nombre < 10) {
+                return unites[nombre];
+            } else if (nombre < 20) {
+                const exceptions = ['dix', 'onze', 'douze', 'treize', 'quatorze', 'quinze', 'seize', 'dix-sept', 'dix-huit', 'dix-neuf'];
+                return exceptions[nombre - 10];
+            } else {
+                let dizaine = Math.floor(nombre / 10);
+                let unite = nombre % 10;
+
+                if (unite === 0) {
+                    return dizaines[dizaine];
+                } else {
+                    return dizaines[dizaine] + '-' + unites[unite];
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="fizzBuzz()">Lancer FizzBuzz</button>
+</body>
+</html>
