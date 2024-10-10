@@ -4,6 +4,7 @@ import fetch from 'node-fetch';
 function Mairie(fields) {
   // Le champ 'name' est une chaîne de caractères, on l'affiche tel quel
   this.nom = fields.name || 'Nom inconnu'; // Si le nom est absent, on utilise "Nom inconnu"
+  this.sigid = fields.sigid || ''; // ajout de la propriété sigid vu que c'est le meme nom par tout!
   this.temps_attente = fields.averagewaitingtime || 0;
   this.horaires_ouverture = parseSchedule(fields.dayschedule);
   this.ouverte = fields.isopen === 1; // Utilisation de la propriété 'isopen'
@@ -49,10 +50,11 @@ const fetchMairiesData = () =>
 const afficherMairies = (mairies) => {
   const mairiesOuvertes = mairies
     .filter(mairie => mairie.ouverte) // Filtrer les mairies ouvertes
-    .sort((a, b) => a.temps_attente - b.temps_attente || a.nom.localeCompare(b.nom)); // Trier par temps d'attente puis par nom
+    .sort((a, b) => a.temps_attente - b.temps_attente || a.sigid.localeCompare(b.sigid)); // Trier par temps d'attente puis par sigid
 
   mairiesOuvertes.forEach(mairie => {
     console.log(`Mairie : ${mairie.nom}`);
+    console.log(`Sigid : ${mairie.sigid}`);
     console.log(`Temps d'attente moyen : ${mairie.temps_attente} minutes`);
     console.log(`Horaires d'ouverture : ${mairie.horaires_ouverture}`);
     console.log('---------------------------------');
