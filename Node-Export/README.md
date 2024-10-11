@@ -34,3 +34,30 @@ Les packages suivants sont utilisés :
 
 ```bash
 npm install
+```
+
+### Comment exécuter le programme
+
+#### Exporter en JSON
+
+-**Pour récupérer les données de l'API et les exporter dans un fichier users.json, exécutez la commande suivante :**
+
+```bash
+node index.js json
+```
+
+#### Exporter en csv
+
+-**Pour récupérer les données de l'API et les exporter dans un fichier users.csv, exécutez la commande suivante :**
+
+```bash
+node index.js csv
+```
+
+#### Exporter en Excel
+
+-**Pour récupérer les données de l'API et les exporter dans un fichier users.xlsx, exécutez la commande suivante :**
+
+```bash
+node index.js excel
+```
