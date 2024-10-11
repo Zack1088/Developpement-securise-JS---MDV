@@ -1,0 +1,17 @@
+{
+  "name": "node-export",
+  "version": "1.0.0",
+  "description": "Projet pour récupérer et exporter des données en JSON, CSV, et Excel",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "exceljs": "^4.3.0",
+    "fast-csv": "^4.3.6",
+    "fs-extra": "^11.1.1"
+  },
+  "author": "Zack",
+  "license": "ISC"
+}
